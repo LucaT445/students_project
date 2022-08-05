@@ -5,12 +5,13 @@
 
     const getImages = async () => {
         const data = await fetch('http://localhost:3000/images').then(res => res.json());
-        return data.data;
+        return data;
     }
     const constructHtml = async () => {
         const data = await getImages();
-        console.log(data)
-        const currentData = data.splice(15);
+        console.log(data.data)
+        const currentData = data.data
+        console.log(currentData[0].link)
         const rootTemplate = currentData.forEach((item) => {
             const cardContainer = document.createElement('div');
             const imgContainer = document.createElement('div');
@@ -21,7 +22,9 @@
             imgContainer.setAttribute('class', 'card-img');
             titleHtml.setAttribute('class', 'card-title');
             titleHtml.appendChild(titleNode);
-            imgItem.setAttribute('src', `public/${item.link}`);
+            imgItem.setAttribute('src', `/public/images/${item.link.slice(12)}`);
+            imgItem.setAttribute('alt', `sample image`);
+            imgItem.setAttribute('style', "height:250px; width:250px");
             imgContainer.appendChild(imgItem);
             cardContainer.appendChild(imgContainer);
             cardContainer.appendChild(titleHtml);
