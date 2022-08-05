@@ -38,7 +38,7 @@ exports.login = (req, res, next) => {
 
                         req.session.loggedIn = true;
                         req.session.email = result[0].email;
-                        req.session.id = result[0].id
+                        req.session.user_id = result[0].id
                         console.log('login success');
                         return res.redirect("/home");
                         // return res.status(200).send({
