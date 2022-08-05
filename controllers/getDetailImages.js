@@ -1,9 +1,10 @@
 const db = require('../helpers/mysqlAdapter')
 
 exports.getDetailImage = (req, res)=>{
-    const id = req.params
+    const {id} = req.params
     db.query(
-        `SELECT * FROM images WHERE id = "${id}"`, (err, result)=>{
+        `SELECT * FROM images WHERE id="${id}"`, (err, result)=>{
+            console.log(result)
             if(err)return res.status(400).json({
                 msg : err
             })
