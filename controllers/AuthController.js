@@ -38,12 +38,14 @@ exports.login = (req, res, next) => {
 
                         req.session.loggedIn = true;
                         req.session.email = result[0].email;
+                        console.log('login success');
                         return res.redirect("/home");
                         // return res.status(200).send({
                         //     msg: 'Logged in!',
                         //     token,
                         //     user: result[0]
                         // });
+                        
                     }
                     return res.status(401).send({
                         msg: 'Username or password is incorrect!'
