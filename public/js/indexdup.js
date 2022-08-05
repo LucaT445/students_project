@@ -9,8 +9,7 @@
     }
     const constructHtml = async () => {
         const data = await getImages();
-        console.log(data.data)
-        const currentData = data.data
+        const currentData = data;//.splice(15);
         console.log(currentData[0].link)
         const rootTemplate = currentData.forEach((item) => {
             const cardContainer = document.createElement('div');
@@ -22,8 +21,9 @@
             imgContainer.setAttribute('class', 'card-img');
             titleHtml.setAttribute('class', 'card-title');
             titleHtml.appendChild(titleNode);
+
+            imgItem.setAttribute('src', `${item.link}`);
             titleHtml.setAttribute('href', `http://localhost:3000/detail/${item.id}`)
-            imgItem.setAttribute('src', `/public/images/${item.link.slice(12)}`);
             imgItem.setAttribute('alt', `sample image`);
             imgItem.setAttribute('style', "height:250px; width:250px");
             imgContainer.appendChild(imgItem);
