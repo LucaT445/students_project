@@ -23,4 +23,8 @@ router.get('/viewpost', function (req, res, next) {
   res.render('viewpost', { title: 'CSC 317 App', header: 'View Post' });
 });
 
+router.get('/cek',function(req,res,next){
+  
+  res.render('cekpage', { title: 'CSC 317 App', header: 'Cek Page' });
+})
 module.exports = router;
