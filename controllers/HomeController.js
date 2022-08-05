@@ -4,7 +4,7 @@ exports.index = (req,res)=>{
     // res.send('HOME')
     let loggedIn = false;
     if(req.session.loggedIn){
-         loggedIn = true;
+        loggedIn = true;
     }
     res.render('index', { title: 'CSC 317 App', name: "[Luke Thilgen]", header: 'Main Page',loggedIn });
 }

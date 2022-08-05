@@ -4,6 +4,7 @@ var cekPageController = require('../controllers/CekPageController');
 var authController = require('../controllers/AuthController');
 var homeController = require('../controllers/HomeController');
 var postController = require('../controllers/PostController');
+var imageController = require('../controllers/getAllImages')
 var {uploadImage} = require('../helpers/multer')
 
 /* GET home page. */
@@ -21,6 +22,7 @@ router.get('/logout', authController.logout);
 router.post('/register',authController.register);
 router.post('/login',authController.login);
 router.post('/post', uploadImage.single('image'), postController.createPost)
+router.get('/images', imageController.getAllImage)
 
 router.get('/registration', function (req, res, next) {
   res.render('registration', { title: 'CSC 317 App', header: 'Register Page' });
