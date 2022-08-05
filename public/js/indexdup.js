@@ -15,13 +15,14 @@
         const rootTemplate = currentData.forEach((item) => {
             const cardContainer = document.createElement('div');
             const imgContainer = document.createElement('div');
-            const titleHtml = document.createElement('p');
+            const titleHtml = document.createElement('a');
             const imgItem = document.createElement('img');
             const titleNode = document.createTextNode(item.title);
             cardContainer.setAttribute('class', 'card');
             imgContainer.setAttribute('class', 'card-img');
             titleHtml.setAttribute('class', 'card-title');
             titleHtml.appendChild(titleNode);
+            titleHtml.setAttribute('href', `http://localhost:3000/detail/${item.id}`)
             imgItem.setAttribute('src', `/public/images/${item.link.slice(12)}`);
             imgItem.setAttribute('alt', `sample image`);
             imgItem.setAttribute('style', "height:250px; width:250px");

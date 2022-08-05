@@ -18,13 +18,22 @@ router.get('/login', function (req, res, next) {
   res.render('login', { title: 'CSC 317 App', header: 'Login Page' });
 });
 
+router.get('/detail/:id', function (req, res, next){
+  const {id} = req.params
+  const data = async ()=>{
+    const detailImage = await fetch(`http://localhost:3000/image/${id}`)
+    return detailImage
+  }
+  res.render('detail', { title: 'CSC 317 App', header: `Detail Image with Id = ${id}`})
+})
+router.get('/image/:id', detailController.getDetailImage)
+
 router.get('/logout', authController.logout);
 
 router.post('/register',authController.register);
 router.post('/login',authController.login);
 router.post('/post', uploadImage.single('image'), postController.createPost)
 router.get('/images', imageController.getAllImage)
-router.get('/image/:id', detailController.getDetailImage)
 
 router.get('/registration', function (req, res, next) {
   res.render('registration', { title: 'CSC 317 App', header: 'Register Page' });
