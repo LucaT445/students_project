@@ -14,7 +14,7 @@ function buildCardsUsingStrings(data) {
 
 function fetchPhotos(){
     // where we will get photos from
-    var url = "https://jsonplaceholder.typicode.com/albums/2/photos";
+    var url = "http://localhost:3000/images";
     //calling fetch with the URL, this will initiate a GET request on the URL
     fetch(url)
     // initial hanlder for repsonse
@@ -26,7 +26,7 @@ function fetchPhotos(){
         // getting div tag by ID
         let imgStorageElement = document.getElementById('img-storage');
         // loop over all photos in response
-        photos.forEach(photo => {
+        photos.data.forEach(photo => {
             // call build function
             imgStorageHTML += buildCardsUsingStrings(photo);
         });
