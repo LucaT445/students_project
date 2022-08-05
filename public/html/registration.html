@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Had some difficulty completing this. The form works but a few issues I ran into were: getting my submit button to work,
+confirming the username and password and getting the errors to print. Still trying to figure it out but will turn in what I have by 11:59
+tonight. Btw, some of the pages might look different than how they were in assignment 3. I adjusted the css code to make them look better 
+but was overwhelmed and couldn't finish in time. Will finish all formmating during the time we work on the project. -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+    <h4 id="message">This is the Registration Form.</h4>
+    <link rel="stylesheet" href="registration.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form id="myForm" onsubmit="event.preventDefault(); myValidation();">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" />
+
+        <label for="pass">Password</label>
+        <input type="password" id="pass" name="pass" />
+
+        <label for="passValidation">Confirm Password</label>
+        <input type="password" id="passValidation" name="passValidation" />
+        <label for="age_checkbox">Please confirm, are you 13+ ?</label>
+        <input type="checkbox" name="check" id="age_checkbox" required />
+        <br />
+        Do you accept T.O.S. and our Privacy Rules?
+        <input
+          type="checkbox"
+          name="check"
+          id="terms_checkbox"
+          value="2"
+          required
+        />
+        
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <div class="container">
+      <h4 id="message">This is the Registration Form.</h4>
+      <nav>
+        <div class="application">
+            <h2>Navigation</h2>
+        </div>
+       
+        <ul>
+            <li>
+                <a href="Index.html">Home</a>
+            </li>
+            <li>
+                <a href="login.html">Login</a>
+            </li>
+            <li>
+                <a href="registration.html">Registration</a>
+            </li>
+            <li>
+                <a href="postimage.html">Post Image</a>
+            </li>
+            <li>
+                <a href="viewpost.html">Viewpost</a>
+            </li>
+        </ul>
+    </nav>
+    </form>
+    
+    </body>
+    </html>
+    </div>
+  </body>
+  <script src="registration.js"></script>
+</html>

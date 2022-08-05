@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    
+    
+    
+    <title>Main Page</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type = "text/javascript" src="path/to/file.js"></script>
+    <script defer src = "samplefetch.js"></script>
+
+     <title>Front Page</title>
+     <link rel="stylesheet" type="text/css" href="../css/mainindex.css">
+</head>
+<body>
+    <header>
+        <h1>Main Page</h1>
+        <a class="btn-bgstroke"></a>
+    </header>
+
+
+    <script>
+        function elementFromHtml(html) {
+            // const template = document.createElement("template");
+            // template.innerHTML = html.trim();
+            // return template.content.firstElementChild;
+
+            const imageUrl = "https://jsonplaceholder.typicode.com/albums/2/photos";
+
+            //  (async () => {
+            //     const response = await fetch (imageUrl)
+            //     const imageBlob = await response.blob()
+            //     const reader = new FileReader();
+            //     reader.readAsDataURL(imageBlob);
+            //     reader.onloadend = () => {
+            //         const base64data = reader.result;
+            //         console.log(base64data);
+            //     }
+            // })()
+            // for(let i = 0; i < 5; i++){
+            //     const img = document.createElement("img");
+            //     img.src = "https://jsonplaceholder.typicode.com/albums/2/photos";
+            //     document.body.appendChild(img);
+            // }
+            
+
+        }
+        elementFromHtml();
+    </script>
+
+    
+
+    <br><br>
+
+    <nav>
+        <div class="application">
+            <h2>Navigate</h2>
+        </div>
+        
+        <ul>
+            <li>
+                <a href="Index.html">Home</a>
+            </li>
+            <li>
+                <a href="login.html">Login</a>
+            </li>
+            <li>
+                <a href="registration.html">Registration</a>
+            </li>
+            <li>
+                <a href="postimage.html">Post Image</a>
+            </li>
+            <li>
+                <a href="viewpost.html">Viewpost</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="main-page">
+        <h2>Description</h2>
+        <p>
+            This site is for uploading your own personal images. To start, you must create an account with a username and password. 
+
+        </p>
+        <div id="data-container" class="card-container">
+
+        </div>
+    </section>
+    <footer>
+        <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script>, Image Uploading Website</p>
+        </p>
+    </footer>
+
+    <script src="../js/indexdup.js"></script>    
+</body>
+</html>
