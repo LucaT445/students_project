@@ -9,8 +9,8 @@
     }
     const constructHtml = async () => {
         const data = await getImages();
-        const currentData = data;//.splice(15);
-        console.log(currentData[0].link)
+        const currentData = data.data;//.splice(15);
+        // console.log(currentData[0].link)
         const rootTemplate = currentData.forEach((item) => {
             const cardContainer = document.createElement('div');
             const imgContainer = document.createElement('div');
