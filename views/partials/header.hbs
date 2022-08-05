@@ -7,17 +7,25 @@
         <li>
             <a href="/">Home</a>
         </li>
+        {{#unless loggedIn}}
         <li>
             <a href="login">Login</a>
         </li>
+        
         <li>
             <a href="/registration">Registration</a>
         </li>
+        {{/unless}}
         <li>
             <a href="/postimage">Post Image</a>
         </li>
         <li>
             <a href="/viewpost">Viewpost</a>
         </li>
+        {{#if loggedIn}}
+        <li>
+            <a href="/logout">Logout</a>
+        </li>
+        {{/if}}
     </ul>
 </nav>
