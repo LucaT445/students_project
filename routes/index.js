@@ -5,6 +5,7 @@ var authController = require('../controllers/AuthController');
 var homeController = require('../controllers/HomeController');
 var postController = require('../controllers/PostController');
 var imageController = require('../controllers/ImageController')
+var detailController = require('../controllers/getDetailImages')
 var {uploadImage} = require('../helpers/multer')
 
 /* GET home page. */
@@ -16,6 +17,16 @@ router.get('',homeController.index);
 router.get('/login', function (req, res, next) {
   res.render('login', { title: 'CSC 317 App', header: 'Login Page' });
 });
+
+router.get('/detail/:id', function (req, res, next){
+  const {id} = req.params
+  const data = async ()=>{
+    const detailImage = await fetch(`http://localhost:3000/image/${id}`)
+    return detailImage
+  }
+  res.render('detail', { title: 'CSC 317 App', header: `Detail Image with Id = ${id}`})
+})
+router.get('/image/:id', detailController.getDetailImage)
 
 router.get('/logout', authController.logout);
 
